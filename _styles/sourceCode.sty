@@ -1,0 +1,23 @@
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{my_keyword}{HTML}{076384}
+\definecolor{my_comment}{HTML}{346109}
+\definecolor{my_string}{HTML}{653A09}
+
+\lstset{ % string literal style
+    inputencoding=utf8,
+	keepspaces=true, % пробелы в коментариях не съедать
+    extendedchars=true,
+    breaklines=true, % автоматический перенос строк
+    tabsize=2, % таб = 2 пробел
+    numbers=left, % где нумерация строк
+    showtabs=2, % показывать табы
+    frame=lines, % рамка
+    showspaces=false, % показывать пробелы
+    showstringspaces=false, % показывать пробелы в строках
+    keywordstyle=\color{my_keyword}\ttfamily\bfseries,
+    commentstyle=\color{my_comment}\ttfamily\itshape,
+    stringstyle=\color{my_string},
+	basicstyle=\ttfamily, % Шрифт для отображения кода
+}

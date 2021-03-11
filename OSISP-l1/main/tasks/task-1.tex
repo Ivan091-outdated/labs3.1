@@ -1,0 +1,100 @@
+\paragraph{Часть 1}
+\subparagraph{Задание 1}
+
+Определить путевое имя рабочего каталога. Как обозначается корневой
+каталог? Какое путевое имя получили (относительное или абсолютное)?
+
+\begin{verbatim}
+ivan@pc:~$ pwd
+/home/ivan
+\end{verbatim}
+
+Получен абсолютный путь.
+
+Корневой каталог обозначается \textbf{\textbackslash}.
+
+\subparagraph{Задание 2}
+
+Создать в начальном каталоге два подкаталога. Просмотреть содержимое
+рабочего каталога. Просмотреть содержимое родительского каталога, не
+переходя в него.
+
+\begin{verbatim}
+ivan@pc:~/lab$ mkdir dir1
+ivan@pc:~/lab$ mkdir dir2
+ivan@pc:~/lab$ ls
+dir1  dir2
+ivan@pc:~/lab$ ls ../
+books          Downloads     Music            snap
+CLionProjects  external      Pictures         Templates
+configuration  IdeaProjects  Programs         test
+Desktop        lab           Public           Videos
+Documents      Latex         PycharmProjects
+\end{verbatim}
+
+\subparagraph{Задание 3}
+
+Перейти в системный каталог. Просмотреть его содержимое. Просмотреть
+содержимое начального каталога. Вернуться в начальный каталог.
+
+\begin{verbatim}
+ivan@pc:~/lab$ cd /
+ivan@pc:/$ ls
+bin    dev   lib    libx32      mnt   root  snap  tmp
+boot   etc   lib32  lost+found  opt   run   srv   usr
+cdrom  home  lib64  media       proc  sbin  sys   var
+ivan@pc:/$ ls ~lab
+ls: cannot access '~lab': No such file or directory
+ivan@pc:/$ ls ~/lab
+dir1  dir2
+ivan@pc:/$ cd ~/lab
+\end{verbatim}
+
+\subparagraph{Задание 4}
+
+Удалить созданные ранее подкаталоги.
+
+\begin{verbatim}
+ivan@pc:~/lab$ rm -r dir1
+ivan@pc:~/lab$ rm -r dir2    
+\end{verbatim}
+
+\subparagraph{Задание 5}
+
+Получить информацию по командам ls и cd с помощью утилиты man. Изучить
+структуру man-документа.
+
+\begin{verbatim}
+ivan@pc:~/lab$ man ls
+ivan@pc:~/lab$ man cd
+No manual entry for cd
+\end{verbatim}
+
+man даёт информацию о команде.
+
+Структура man:
+\begin{enumerate}
+    \item имя команды и краткое её описание
+    \item паттерн использования команды
+    \item подробное описание команды и аргументов командной строки
+    \item автор
+    \item ссылки, куда репортить баги
+    \item копирайт
+    \item дополнительная информация
+\end{enumerate}
+
+\subparagraph{Задание 6}
+
+Получить краткую информацию по командам ls и cd с помощью команды
+whatis и apropos. В чем различие?
+
+whatis даёт краткую информацию по конкретной команде, 
+а apropos ищет вхождения своего аргумента 
+в командах и даёт информацию по ним.
+
+\subparagraph{Задание 7}
+
+То же, что и в п.5, только с помощью команды info.
+
+info даёт более детальную информацию в отличии от man. Эта информация представлена
+в другом формате.

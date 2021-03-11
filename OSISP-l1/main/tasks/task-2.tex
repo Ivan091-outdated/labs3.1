@@ -1,0 +1,73 @@
+\paragraph{Часть 2}
+\subparagraph{Задание 1}
+
+Я не использую какие-либо системы типа GNOME или KDE.
+Вместо этого у меня установлен i3 поверх GNOME.
+i3 это тайловый менеджер, но не системное окружение.
+Он позволяет максимально быстро перемещаться между окнами без использования мыши.
+Здесь нет никаких панелей, только лишь статус бар.
+Настраивается i3 при помощи конфиг файла.
+
+Вот выдержка из него:
+\begin{Verbatim}[breaklines=true, breakanywhere=true]
+# wallpapers
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg
+
+# keyring fix
+exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh 
+
+# keyboard layout
+exec --no-startup-id setxkbmap -layout us,ru -option  grp:win_space_toggle
+
+# lxpolkit to run sudo apps
+exec --no-startup-id lxpolkit
+
+# mouse sensivity
+set $mouseName 'pointer:COMPANY  USB Device '
+exec --no-startup-id xinput set-prop $mouseName "libinput Accel Speed" -0.1
+exec --no-startup-id xinput set-prop $mouseName "libinput Accel Profile Enabled" 0, 1
+
+#############################
+# keybinds
+#############################
+
+bindsym $mod+b exec google-chrome --password-store=gnome
+bindsym $mod+i exec intellij-idea-ultimate
+bindsym $mod+t exec i3-sensible-terminal -e ranger
+
+
+#############################
+###     Color theme:      ###
+#############################
+
+bindsym $mod+d exec dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-15' -p 'dmenu%'
+
+# class                 border  bground text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+
+client.background       #F8F8F2
+
+bar {
+    status_command i3status
+    font pango:DejaVu Sans Mono 15
+    separator_symbol " | "
+    position bottom
+
+    
+    colors {
+    background #282A36
+    statusline #F8F8F2
+    separator  #44475A
+
+    focused_workspace  #44475A #44475A #F8F8F2
+    active_workspace   #282A36 #44475A #F8F8F2
+    inactive_workspace #282A36 #282A36 #BFBFBF
+    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    binding_mode       #FF5555 #FF5555 #F8F8F2
+    }
+}
+\end{Verbatim}
