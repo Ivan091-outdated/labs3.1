@@ -1,0 +1,24 @@
+\documentclass[oneside,final,14pt]{extreport}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{vmargin}
+\usepackage{microtype}
+
+\usepackage{title_variables}
+\usepackage{../_styles/sourceCode}
+\usepackage{../_styles/tableOfContent}
+\usepackage{../_styles/hyperlinks}
+\usepackage{../_styles/Verbatim}
+
+\setmarginsrb{25mm}{20mm}{20mm}{20mm}{0pt}{0mm}{0pt}{0mm}
+\pagestyle{empty}
+\sloppy
+\begin{document}
+    \input{../_includes/titlePage.tex}
+    \newpage
+    \input{tasks/task-1.tex}
+    \input{tasks/task-2.tex}
+    \input{tasks/conclusion.tex}
+\end{document}

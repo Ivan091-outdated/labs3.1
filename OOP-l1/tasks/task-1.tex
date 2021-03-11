@@ -1,0 +1,21 @@
+\subparagraph{Задание 1:}
+Вычислить значение выражения
+\[\frac{{a+b}^2-(a^2+2ab)}{b^2}\]
+при различных типах данных (float и double).
+Вычисления следует выполнять с использованием промежуточных переменных.
+Сравнить и объяснить полученные результаты.
+
+\lstinputlisting[label={lst:task1double}, language=C++]{../src/cpp/lab1/task1double.cpp}
+\lstinputlisting[label={lst:task1float}, language=C++]{../src/cpp/lab1/task1float.cpp}
+
+Результаты работы:
+
+\begin{lstlisting}[label={lst:bashresults}, language=bash]
+ivan@pc:~/Labs/latex/src/cpp/lab1$ g++ task1float.cpp -o tf
+ivan@pc:~/Labs/latex/src/cpp/lab1$ g++ task1double.cpp -o td
+ivan@pc:~/Labs/latex/src/cpp/lab1$ ./tf
+6.25e+06
+ivan@pc:~/Labs/latex/src/cpp/lab1$ ./td
+1.00117
+ivan@pc:~/Labs/latex/src/cpp/lab1$
+\end{lstlisting}
