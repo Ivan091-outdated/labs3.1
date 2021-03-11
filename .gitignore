@@ -296,7 +296,6 @@ tags
 [._]*.un~
 
 *.o
-bin/
-.idea/
-.vscode/
-out/
+**/bin
+/.idea
+**/out
