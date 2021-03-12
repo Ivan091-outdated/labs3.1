@@ -300,4 +300,4 @@ tags
 **/.idea
 **/out
 
-[Cc]make*
+[Cc][Mm]ake*
