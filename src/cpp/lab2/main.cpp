@@ -22,7 +22,7 @@ int main() {
     std::string word;
     std::map<std::string, int> wordCount;
 
-    file.open("text.txt");
+    file.open("../text.txt");
 
     while (!file.eof()) {
         file >> word;
