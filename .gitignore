@@ -299,3 +299,5 @@ tags
 **/bin
 **/.idea
 **/out
+
+[Cc]make*
