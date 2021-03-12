@@ -3,7 +3,7 @@
 #include "product.h"
 
 Product::Product(const char *name, int count, long price) {
-    auto len  = strlen(name) + 1;
+    auto len = strlen(name) + 1;
     this->name = new char[len];
     this->name = strcpy(this->name, name);
     this->count = count;
@@ -26,34 +26,34 @@ const char *Product::getName() const {
     return name;
 }
 
-Product Product::setName(const char *newName) {
+Product *Product::setName(const char *newName) {
     delete[] name;
     auto len = strlen(newName) + 1;
     name = new char[len];
     strcpy(name, newName);
-    return *this;
+    return this;
 }
 
-Product Product::setName(char *newName) {
+Product *Product::setName(char *newName) {
     delete[] name;
     name = newName;
-    return *this;
+    return this;
 }
 
 int Product::getCount() const {
     return count;
 }
 
-Product Product::setCount(int newCount) {
+Product *Product::setCount(int newCount) {
     count = newCount;
-    return *this;
+    return this;
 }
 
 long Product::getPrice() const {
     return price;
 }
 
-Product Product::setPrice(long newPrice) {
+Product *Product::setPrice(long newPrice) {
     price = newPrice;
-    return *this;
+    return this;
 }

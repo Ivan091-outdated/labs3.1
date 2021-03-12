@@ -14,14 +14,14 @@ public:
     ~Product();
 
     const char* getName() const;
-    Product setName(const char* newName);
-    Product setName(char* newName);
+    Product* setName(const char* newName);
+    Product* setName(char* newName);
 
     int getCount() const;
-    Product setCount(int newCount);
+    Product* setCount(int newCount);
 
     long getPrice() const;
-    Product setPrice(long newPrice);
+    Product* setPrice(long newPrice);
 
 private:
     char* name;

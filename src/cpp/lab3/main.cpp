@@ -10,5 +10,7 @@ int main() {
     auto pgetName = &Product::getName;
     auto name = (*a.*pgetName)();
 
+    a->setName("Milk").setCount(10000).setPrice(450);
+
     delete a;
 }
