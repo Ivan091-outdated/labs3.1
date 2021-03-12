@@ -15,7 +15,7 @@
 
     за \titlePageSemestr~семестр
 
-    по дисциплине: \titlePageLesson
+    по дисциплине: {\bfseries \titlePageLesson}
 
     Тема: \titlePageTopic
 \end{center}
@@ -23,16 +23,20 @@
 \vfill
 
 \begin{flushright}
-    \begin{minipage}[t]{7cm}
-        Выполнил:
+    \begin{minipage}[tl]{7cm}
+        \textbf{Выполнил}
+
+        \smallskip
 
         \titlePageStudentType
 
         \titlePageStudentSurname~\titlePageStudentName
 
-        \hspace{0pt}
+        \bigskip
 
-        Проверил:
+        \textbf{Проверил}
+
+        \smallskip
 
         \titlePageTeacherSurname~\titlePageTeacherName
     \end{minipage}

@@ -1,12 +1,10 @@
-\subparagraph{Задание 2:}
+\paragraph{Задание 2:}
 Вычислить значения выражений.
-\begin{ttfamily}
-    \begin{enumerate}
-        \item m+++n
-        \item m-{}- > n
-        \item n-{}- > m
-    \end{enumerate}
-\end{ttfamily}
+\begin{enumerate}
+    \item {\ttfamily m+++n}
+    \item {\ttfamily m-{}- > n}
+    \item {\ttfamily n-{}- > q}
+\end{enumerate}
 Объяснить полученные результаты.
 
 \lstinputlisting[label={lst:cpptask2}, language=C++]{../src/cpp/lab1/task2.cpp}
@@ -17,9 +15,11 @@ ivan@pc:~/Labs/latex/src/cpp/lab1$ ./t2
 0
 1
 \end{lstlisting}
+
 \begin{enumerate}
-    \item \ttfamily{m+++n} на самом деле \ttfamily{( m++ ) + n}
-    \item \ttfamily{m-{}- > n} декремент постфиксный, потому сначала вычислится
-            \ttfamily{m} и вставится в выражение, а потом \ttfamily{m} уменьшится на 1.
-    \item \ttfamily{n-{}- > m} см.{} предыдущий пункт.
+    \item {\ttfamily m+++n} на самом деле {\ttfamily ( m++ ) + n}
+    \item {\ttfamily m-{}- > n} декремент постфиксный, потому сначала вычислится
+          {\ttfamily m} и вставится в выражение, а потом {\ttfamily m} уменьшится на 1.
+    \item {\ttfamily n-{}- > m} см.{} предыдущий пункт.
 \end{enumerate}
+
