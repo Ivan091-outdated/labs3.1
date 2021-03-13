@@ -5,6 +5,12 @@
 \definecolor{my_comment}{HTML}{346109}
 \definecolor{my_string}{HTML}{653A09}
 
+\DeclareRobustCommand{\getFileName}{
+    \filename@parse{\lstname}
+    \texttt{\filename@base.\filename@ext}
+}
+
+
 \lstset{ % string literal style
     inputencoding=utf8,
     keepspaces=true, % пробелы в коментариях не съедать
@@ -14,8 +20,8 @@
     numbers=left, % где нумерация строк
     showtabs=2, % показывать табы
     frame=lines, % рамка
-    captionpos=t
-    title=\filename@ext
+    captionpos=t,
+    title=\getFileName,
     showspaces=false, % показывать пробелы
     showstringspaces=false, % показывать пробелы в строках
     keywordstyle=\bfseries\color{my_keyword}\bfseries,
