@@ -15,7 +15,7 @@ _start:
 
 	cmp rax, 1
 .first:
-reverse text 	cmp [esi], '\0'
+reverse text cmp [esi], '\0'
 	je .reverce
 .second:
 
