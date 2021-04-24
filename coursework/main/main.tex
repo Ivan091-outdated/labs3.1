@@ -1,27 +1,22 @@
-\documentclass[12pt, a4paper, simple]{eskdtext}
+\documentclass[14pt, a4paper, simple]{eskdtext}
 
 \usepackage{../_STYLES/title_variables}
 \usepackage{../_STYLES/eskd_variables}
-\usepackage{../_STYLES/Verbatim}
-\usepackage{hyperref}
+\usepackage{../_STYLES/tableOfContent}
+
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
 \usepackage{textcomp}
 
-% Графа 2 (обозначение документа)
-% AA.BBB.CCCCCC-DD EE FF
-\ESKDsignature{ЛР.ПО5.\titlePageStudentCreditCard-0~81~00}
-% AA - тип работы
-% BBB - группа
-% СССССС - номер зачётки
-% DD - номер работы
-% EE - тип документа
-% FF - версия документа
+
 
 \begin{document}
     \begin{ESKDtitlePage}
         \input{titlePage.tex}
     \end{ESKDtitlePage}
+    \tableofcontents
+    \thispagestyle{empty}
     \newpage
-    asfsdfasf
-    sdafsaf
-    sd
+    \input{introduction.tex}
 \end{document}
