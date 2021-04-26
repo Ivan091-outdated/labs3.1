@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <unistd.h>
-#include <sys/types.h>
 #include <stdlib.h>
 
 void created(int procNum){
@@ -51,11 +50,11 @@ int main() {
         created(procNum);
 
         if ((pid = fork()) == 0){
-            procNum = 5;
+            procNum = 6;
             created(procNum);
 
             if ((pid = fork()) == 0){
-                procNum = 6;
+                procNum = 7;
                 created(procNum);
                 execl("/bin/pwd","pwd",NULL);
                 exited(procNum);

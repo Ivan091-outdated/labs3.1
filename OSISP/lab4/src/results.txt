@@ -1,0 +1,14 @@
+Created 0: parent = 4316, this = 6074
+Created 1: parent = 6074, this = 6075
+Created 4: parent = 6075, this = 6076
+Exited 4: parent = 6075, this = 6076
+Created 5: parent = 6075, this = 6081
+Exited 5: parent = 6075, this = 6081
+Exited 1: parent = 6074, this = 6075
+Created 3: parent = 6074, this = 6082
+Created 6: parent = 6082, this = 6083
+Created 7: parent = 6083, this = 6084
+/home/ivan/Labs/latex/OSISP/lab4/src/cmake-build-debug
+Exited 6: parent = 6082, this = 6083
+Exited 3: parent = 6074, this = 6082
+Exited 0: parent = 4316, this = 6074

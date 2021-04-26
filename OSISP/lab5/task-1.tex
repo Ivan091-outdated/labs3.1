@@ -1,0 +1,13 @@
+\paragraph{Задание}
+Написать программу, которая получает со стандартного потока ввода список файлов каталога, и выводит их в стандартный поток вывода, добавляя перед каждым именем порядковый номер.
+Протестировать на различных каталогах с использованием конвейеров в различных комбинациях вашей программы и команд ls, sort, head, tail.
+В текущем каталоге создайте два файла, в один из которых выводите
+нечетные, а во второй --- четные порядковые номера и соответствующие имена файлов.
+
+\lstinputlisting[label={lst:main}, language=C]{src/main.c}
+Результаты работы при вызове: {\bfseries ls | ./src}
+\lstinputlisting[label={lst:results/odd}, language=C]{src/odd}
+\lstinputlisting[label={lst:results/even}, language=C]{src/even}
+Результаты работы при вызове: {\bfseries ls | head -n 3 | ./src}
+\lstinputlisting[label={lst:results/oddHead}, language=C]{src/oddHead}
+\lstinputlisting[label={lst:results/evenHead}, language=C]{src/evenHead}
