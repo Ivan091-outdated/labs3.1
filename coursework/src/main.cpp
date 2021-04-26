@@ -7,21 +7,17 @@
 #define THREAD_COUNT 4
 #define IMAGE_PIECE_SIZE 750
 
+
 void nonParallel() {
-
-    deNoise(1, IMAGE_SIZE - 1);
-    mirror(0, IMAGE_SIZE);
-
+    deNoise(0, IMAGE_SIZE);
+    upgrade(0, IMAGE_SIZE);
 }
 
 void parallel() {
 #pragma omp parallel for default(none)
     for (int i = 0; i < THREAD_COUNT; ++i) {
         deNoise(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
-    }
-#pragma omp parallel for default(none)
-    for (int i = 0; i < THREAD_COUNT; ++i) {
-        mirror(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
+        upgrade(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
     }
 }
 
@@ -47,7 +43,7 @@ int main(int argc, char *argv[]) {
 
     double end = omp_get_wtime();
     cout << "time:" << (end - start) << endl;
-    setPixels(image, 0, IMAGE_SIZE);
+    unloadPixels(image, 0, IMAGE_SIZE);
     image.save_image("../output.bmp");
     return 0;
 }

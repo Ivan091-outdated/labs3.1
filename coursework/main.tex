@@ -1,14 +1,14 @@
 \documentclass[14pt, a4paper, simple]{eskdtext}
 
-\usepackage{../_STYLES/title_variables}
-\usepackage{../_STYLES/eskd_variables}
-\usepackage{../_STYLES/tableOfContent}
-
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage[T2A]{fontenc}
 \usepackage{textcomp}
+\usepackage{graphicx}
 
+\usepackage{_styles/title_variables}
+\usepackage{_styles/eskd_variables}
+\usepackage{_styles/tableOfContent}
 
 
 \begin{document}
@@ -17,6 +17,9 @@
     \end{ESKDtitlePage}
     \tableofcontents
     \thispagestyle{empty}
-    \newpage
     \input{introduction.tex}
+    \input{Part1DevAlgo.tex}
+    \input{Part2DevProg.tex}
+    \input{Part3DevAlgoParallel.tex}
+    \input{Part4DevProgParallel.tex}
 \end{document}
