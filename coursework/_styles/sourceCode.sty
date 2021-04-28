@@ -7,11 +7,7 @@
 
 \DeclareRobustCommand{\getFileName}{
     \filename@parse{\lstname}
-    \if \filename@ext\empty
-    \texttt{\filename@base}
-    \else
     \texttt{\filename@base.\filename@ext}
-    \fi
 }
 
 
@@ -25,7 +21,7 @@
     showtabs=2, % показывать табы
     frame=lines, % рамка
     captionpos=t,
-    title=\getFileName,
+    caption=\getFileName,
     showspaces=false, % показывать пробелы
     showstringspaces=false, % показывать пробелы в строках
     keywordstyle=\bfseries\color{my_keyword}\bfseries,
