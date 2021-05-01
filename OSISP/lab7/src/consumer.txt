@@ -1,0 +1,35 @@
+Consumer started
+Consumer waits
+Iteration 0
+111
+
+Consumer waits
+Iteration 1
+ttt
+
+Consumer waits
+Iteration 2
+kkk
+
+Consumer waits
+Iteration 3
+aaa
+
+Consumer waits
+Iteration 4
+---
+
+Consumer waits
+Iteration 5
+\\\
+
+Consumer waits
+Iteration 6
+***
+
+Consumer waits
+Iteration 7
+nnn
+
+Consumer waits
+^C
