@@ -17,7 +17,10 @@ void parallel() {
 #pragma omp parallel for default(none)
     for (int i = 0; i < THREAD_COUNT; ++i) {
         deNoise(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
-        upgrade(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
+    }
+#pragma omp parallel for default(none)
+    for (int i = 0; i < THREAD_COUNT; ++i) {
+        deNoise(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
     }
 }
 
