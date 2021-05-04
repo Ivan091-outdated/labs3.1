@@ -1,0 +1,6 @@
+out: clean out.o
+	ld out.o -o out
+out.o:
+	nasm -f elf64 -l out.lst string.asm -o out.o
+clean:
+	rm -f out.lst out.o out

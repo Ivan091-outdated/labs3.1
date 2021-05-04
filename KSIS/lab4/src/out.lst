@@ -1,0 +1,214 @@
+     1                                  STDIN equ 0
+     2                                  STDOUT equ 1
+     3                                  STDERR equ 2
+     4                                  
+     5                                  SYS_READ equ 0
+     6                                  SYS_WRITE equ 1
+     7                                  SYS_EXIT equ 60
+     8                                  
+     9                                  ZERO equ 0
+    10                                  NEW_LINE equ 10
+    11                                  REPLACE equ '$'
+    12                                  
+    13                                  SPACE equ ' '
+    14                                  LINE_SIZE equ 128
+    15                                  PREFIX_SIZE equ 2
+    16                                  
+    17                                  section .data
+    18 00000000 456E7465722061206C-     	linePrompt db "Enter a line: ", ZERO
+    18 00000009 696E653A2000       
+    19 0000000F 456E7465722061206C-     	prefixPrompt db "Enter a letter to replace: ", ZERO
+    19 00000018 657474657220746F20-
+    19 00000021 7265706C6163653A20-
+    19 0000002A 00                 
+    20 0000002B 526573756C743A2000      	resultMarker db "Result: ", ZERO
+    21                                  
+    22                                  section .bss
+    23 00000000 <res 00000080>          	line resb LINE_SIZE
+    24 00000080 <res 00000002>          	prefix resb PREFIX_SIZE
+    25                                  
+    26                                  section .text
+    27                                  	global _start
+    28                                  
+    29                                  %macro process 2
+    30                                  	mov rax, %1
+    31                                  	mov rbx, %2
+    32                                  	mov rcx, ZERO
+    33                                  	mov rdx, ZERO
+    34                                  
+    35                                  	mov dl, [rbx]
+    36                                  	mov cl, [rax]
+    37                                  
+    38                                  	cmp cl, NEW_LINE
+    39                                  	je _processEnd
+    40                                  
+    41                                  	cmp cl, ZERO
+    42                                  	je _processEnd
+    43                                  
+    44                                  	cmp cl, dl
+    45                                  	je _processReplace
+    46                                  
+    47                                  	inc rax
+    48                                  
+    49                                  _processLoop:
+    50                                  	mov cl, [rax]
+    51                                  
+    52                                  	cmp cl, NEW_LINE
+    53                                  	je _processEnd
+    54                                  
+    55                                  	cmp cl, ZERO
+    56                                  	je _processEnd
+    57                                  
+    58                                  	cmp cl, SPACE
+    59                                  	jne _processIncrement
+    60                                  
+    61                                  	inc rax
+    62                                  	mov cl, [rax]
+    63                                  
+    64                                  	cmp cl, NEW_LINE
+    65                                  	je _processEnd
+    66                                  
+    67                                  	cmp cl, ZERO
+    68                                  	je _processEnd
+    69                                  
+    70                                  	cmp cl, dl
+    71                                  	je _processReplace
+    72                                  
+    73                                  _processIncrement:
+    74                                  	inc rax
+    75                                  	jmp _processLoop
+    76                                  
+    77                                  _processReplace:
+    78                                  	mov cl, REPLACE
+    79                                  	mov [rax], cl
+    80                                  	jmp _processIncrement
+    81                                  
+    82                                  _processEnd:
+    83                                  %endmacro
+    84                                  
+    85                                  %macro exit 0
+    86                                  	mov rax, SYS_EXIT
+    87                                  	mov rdi, ZERO
+    88                                  	syscall
+    89                                  %endmacro
+    90                                  
+    91                                  _start:
+    92 00000000 48B8-                   	mov rax, linePrompt
+    92 00000002 [0000000000000000] 
+    93 0000000A E8A5000000              	call _print
+    94 0000000F E8C6000000              	call _getLine
+    95                                  
+    96 00000014 48B8-                   	mov rax, prefixPrompt
+    96 00000016 [0F00000000000000] 
+    97 0000001E E891000000              	call _print
+    98 00000023 E8CE000000              	call _getPrefix
+    99                                  
+   100                                  	process line, prefix
+   100 00000028 48B8-               <1>  mov rax, %1
+   100 0000002A [0000000000000000]  <1>
+   100 00000032 48BB-               <1>  mov rbx, %2
+   100 00000034 [8000000000000000]  <1>
+   100 0000003C B900000000          <1>  mov rcx, ZERO
+   100 00000041 BA00000000          <1>  mov rdx, ZERO
+   100                              <1> 
+   100 00000046 8A13                <1>  mov dl, [rbx]
+   100 00000048 8A08                <1>  mov cl, [rax]
+   100                              <1> 
+   100 0000004A 80F90A              <1>  cmp cl, NEW_LINE
+   100 0000004D 743B                <1>  je _processEnd
+   100                              <1> 
+   100 0000004F 80F900              <1>  cmp cl, ZERO
+   100 00000052 7436                <1>  je _processEnd
+   100                              <1> 
+   100 00000054 38D1                <1>  cmp cl, dl
+   100 00000056 742C                <1>  je _processReplace
+   100                              <1> 
+   100 00000058 48FFC0              <1>  inc rax
+   100                              <1> 
+   100                              <1> _processLoop:
+   100 0000005B 8A08                <1>  mov cl, [rax]
+   100                              <1> 
+   100 0000005D 80F90A              <1>  cmp cl, NEW_LINE
+   100 00000060 7428                <1>  je _processEnd
+   100                              <1> 
+   100 00000062 80F900              <1>  cmp cl, ZERO
+   100 00000065 7423                <1>  je _processEnd
+   100                              <1> 
+   100 00000067 80F920              <1>  cmp cl, SPACE
+   100 0000006A 7513                <1>  jne _processIncrement
+   100                              <1> 
+   100 0000006C 48FFC0              <1>  inc rax
+   100 0000006F 8A08                <1>  mov cl, [rax]
+   100                              <1> 
+   100 00000071 80F90A              <1>  cmp cl, NEW_LINE
+   100 00000074 7414                <1>  je _processEnd
+   100                              <1> 
+   100 00000076 80F900              <1>  cmp cl, ZERO
+   100 00000079 740F                <1>  je _processEnd
+   100                              <1> 
+   100 0000007B 38D1                <1>  cmp cl, dl
+   100 0000007D 7405                <1>  je _processReplace
+   100                              <1> 
+   100                              <1> _processIncrement:
+   100 0000007F 48FFC0              <1>  inc rax
+   100 00000082 EBD7                <1>  jmp _processLoop
+   100                              <1> 
+   100                              <1> _processReplace:
+   100 00000084 B124                <1>  mov cl, REPLACE
+   100 00000086 8808                <1>  mov [rax], cl
+   100 00000088 EBF5                <1>  jmp _processIncrement
+   100                              <1> 
+   100                              <1> _processEnd:
+   101                                  
+   102 0000008A 48B8-                   	mov rax, resultMarker
+   102 0000008C [2B00000000000000] 
+   103 00000094 E81B000000              	call _print
+   104                                  
+   105 00000099 48B8-                   	mov rax, line
+   105 0000009B [0000000000000000] 
+   106 000000A3 E80C000000              	call _print
+   107                                  
+   108                                  	exit
+   108 000000A8 B83C000000          <1>  mov rax, SYS_EXIT
+   108 000000AD BF00000000          <1>  mov rdi, ZERO
+   108 000000B2 0F05                <1>  syscall
+   109                                  
+   110                                  _print:
+   111 000000B4 50                      	push rax
+   112 000000B5 BB00000000              	mov rbx, ZERO
+   113                                  
+   114                                  _printLoop:
+   115 000000BA 8A08                    	mov cl, [rax]
+   116                                  
+   117 000000BC 80F900                  	cmp cl, ZERO
+   118 000000BF 7408                    	je _printExit
+   119                                  
+   120 000000C1 48FFC0                  	inc rax
+   121 000000C4 48FFC3                  	inc rbx
+   122 000000C7 EBF1                    	jmp _printLoop
+   123                                  
+   124                                  _printExit:
+   125 000000C9 B801000000              	mov rax, SYS_WRITE
+   126 000000CE BF01000000              	mov rdi, STDOUT
+   127 000000D3 5E                      	pop rsi
+   128 000000D4 4889DA                  	mov rdx, rbx
+   129 000000D7 0F05                    	syscall
+   130 000000D9 C3                      	ret
+   131                                  
+   132                                  _getLine:
+   133 000000DA B800000000              	mov rax, SYS_READ
+   134 000000DF BF00000000              	mov rdi, STDIN
+   135 000000E4 48BE-                   	mov rsi, line
+   135 000000E6 [0000000000000000] 
+   136 000000EE BA80000000              	mov rdx, LINE_SIZE
+   137 000000F3 0F05                    	syscall
+   138 000000F5 C3                      	ret
+   139                                  
+   140                                  _getPrefix:
+   141 000000F6 B800000000              	mov rax, SYS_READ
+   142 000000FB BF00000000              	mov rdi, STDIN
+   143 00000100 48BE-                   	mov rsi, prefix
+   143 00000102 [8000000000000000] 
+   144 0000010A BA02000000              	mov rdx, PREFIX_SIZE
+   145 0000010F 0F05                    	syscall
+   146 00000111 C3                      	ret
