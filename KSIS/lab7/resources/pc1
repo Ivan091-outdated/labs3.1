@@ -1,0 +1,25 @@
+C:\>ping 3.1.1.2
+
+Pinging 3.1.1.2 with 32 bytes of data:
+
+Reply from 3.1.1.2: bytes=32 time=1ms TTL=128
+Reply from 3.1.1.2: bytes=32 time<1ms TTL=128
+Reply from 3.1.1.2: bytes=32 time<1ms TTL=128
+Reply from 3.1.1.2: bytes=32 time<1ms TTL=128
+
+Ping statistics for 3.1.1.2:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..:
+   Link-local IPv6 Address.........: FE80::2E0:B0FF:FE4C:811E
+   IPv6 Address....................: ::
+   IPv4 Address....................: 3.1.1.1
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     0.0.0.0

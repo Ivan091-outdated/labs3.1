@@ -1,0 +1,26 @@
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..:
+   Link-local IPv6 Address.........: FE80::2E0:F9FF:FE2E:CE8A
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.1.10
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.1.1
+
+
+C:\>ping 192.168.3.10
+
+Pinging 192.168.3.10 with 32 bytes of data:
+
+Reply from 192.168.3.10: bytes=32 time=2ms TTL=126
+Reply from 192.168.3.10: bytes=32 time=1ms TTL=126
+Reply from 192.168.3.10: bytes=32 time=1ms TTL=126
+Reply from 192.168.3.10: bytes=32 time=1ms TTL=126
+
+Ping statistics for 192.168.3.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 2ms, Average = 1ms

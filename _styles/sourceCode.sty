@@ -14,6 +14,13 @@
     \fi
 }
 
+\newcommand{\LstinputlistingPlain}[1]{
+    \lstinputlisting[label={lst:#1}]{#1}
+}
+
+\newcommand{\Lstinputlisting}[2]{
+    \lstinputlisting[label={lst:#1}, language=#2]{#1}
+}
 
 \lstset{ % string literal style
     inputencoding=utf8,
