@@ -1,43 +1,63 @@
-Producer started
-Producer waits input
-1
+Consumer started
+Consumer waits
 Iteration 0
-Producer posts
-
-Producer waits input
-t
+1
+Consumer waits
 Iteration 1
-Producer posts
-
-Producer waits input
-k
+2
+Consumer waits
 Iteration 2
-Producer posts
-
-Producer waits input
-a
+3
+Consumer waits
 Iteration 3
-Producer posts
-
-Producer waits input
--
+4
+Consumer waits
 Iteration 4
-Producer posts
-
-Producer waits input
-\
+5
+Consumer waits
 Iteration 5
-Producer posts
-
-Producer waits input
-*
+6
+Consumer waits
 Iteration 6
-Producer posts
-
-Producer waits input
-n
+.
+Consumer waits
 Iteration 7
-Producer posts
-
-Producer waits input
+,
+Consumer waits
+Iteration 8
+/
+Consumer waits
+Iteration 9
+a
+Consumer waits
+Iteration 10
+z
+Consumer waits
+Iteration 11
+x
+Consumer waits
+Iteration 12
+c
+Consumer waits
+Iteration 13
+v
+Consumer waits
+Iteration 14
+b
+Consumer waits
+Iteration 15
+n
+Consumer waits
+Iteration 16
+m
+Consumer waits
+Iteration 17
+t
+Consumer waits
+Iteration 18
+i
+Consumer waits
+Iteration 19
+a
+Consumer waits
 ^C

@@ -1,14 +1,15 @@
-Created 0: parent = 4316, this = 6074
-Created 1: parent = 6074, this = 6075
-Created 4: parent = 6075, this = 6076
-Exited 4: parent = 6075, this = 6076
-Created 5: parent = 6075, this = 6081
-Exited 5: parent = 6075, this = 6081
-Exited 1: parent = 6074, this = 6075
-Created 3: parent = 6074, this = 6082
-Created 6: parent = 6082, this = 6083
-Created 7: parent = 6083, this = 6084
-/home/ivan/Labs/latex/OSISP/lab4/src/cmake-build-debug
-Exited 6: parent = 6082, this = 6083
-Exited 3: parent = 6074, this = 6082
-Exited 0: parent = 4316, this = 6074
+Created 1: parent = 3605, this = 7089
+Created 2: parent = 7089, this = 7090
+Created 5: parent = 7090, this = 7091
+Created 6: parent = 7091, this = 7092
+Exited 6: parent = 7091, this = 7092
+Exited 5: parent = 7090, this = 7091
+Exited 2: parent = 7089, this = 7090
+Created 3: parent = 7089, this = 7093
+Exited 3: parent = 7089, this = 7093
+Created 4: parent = 7089, this = 7095
+Created 7: parent = 7095, this = 7096
+.   CMakeCache.txt  cmake_install.cmake  lab1_OC.cbp  Testing
+..  CMakeFiles	    lab1_OC		 Makefile
+Exited 4: parent = 7089, this = 7095
+Exited 1: parent = 3605, this = 7089

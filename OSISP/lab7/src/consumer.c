@@ -7,28 +7,20 @@
 
 int main() {
     printf("Consumer started\n");
-    sem_t *sem = sem_open(SEM_NAME, 0);
-    if (!sem){
-        printf("Semaphore not exist\n");
-        perror("error: ");
-        return -1;
-    }
-    char buf[1];
+    sem_t *producerSem = sem_open(PRODUCER_SEM_NAME, 0);
+    sem_t *consumerSem = sem_open(CONSUMER_SEM_NAME, 0);
+    sem_t *transferSem = sem_open(TRANSFER_SEM_NAME, 0);
+
     u_int iteration = 0;
+    char buf[2] = ".\n";
+    int intBuf[1];
     while (1) {
         printf("Consumer waits\n");
-        sem_wait(sem);
+        sem_wait(consumerSem);
         printf("Iteration %d\n", iteration++);
-        int fd = open("../main.txt", O_RDONLY, 0666);
-        if (fd < 0){
-            printf("Cannot open the file.");
-            return -1;
-        }
-        read(fd, buf, 1);
-        remove("../main.txt");
-        write(1, buf, 1);
-        write(1, buf, 1);
-        write(1, buf, 1);
-        write(1, "\n\n", 2);
+        sem_getvalue(transferSem, intBuf);
+        buf[0] = (char)intBuf[0];
+        write(0, buf, 2);
+        sem_post(producerSem);
     }
 }

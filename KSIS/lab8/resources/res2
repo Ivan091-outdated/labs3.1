@@ -1,0 +1,53 @@
+C:\>ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..:
+   Link-local IPv6 Address.........: FE80::201:42FF:FEA6:455E
+   IPv6 Address....................: ::
+   IPv4 Address....................: 192.168.4.13
+   Subnet Mask.....................: 255.255.255.0
+   Default Gateway.................: ::
+                                     192.168.4.1
+
+C:\>ping 192.168.1.10
+
+Pinging 192.168.1.10 with 32 bytes of data:
+
+Reply from 192.168.1.10: bytes=32 time=21ms TTL=126
+Reply from 192.168.1.10: bytes=32 time=1ms TTL=126
+Reply from 192.168.1.10: bytes=32 time=11ms TTL=126
+Reply from 192.168.1.10: bytes=32 time=1ms TTL=126
+
+Ping statistics for 192.168.1.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 21ms, Average = 8ms
+
+C:\>ping 192.168.2.10
+
+Pinging 192.168.2.10 with 32 bytes of data:
+
+Reply from 192.168.2.10: bytes=32 time=25ms TTL=126
+Reply from 192.168.2.10: bytes=32 time=1ms TTL=126
+Reply from 192.168.2.10: bytes=32 time=1ms TTL=126
+Reply from 192.168.2.10: bytes=32 time=1ms TTL=126
+
+Ping statistics for 192.168.2.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 25ms, Average = 7ms
+
+C:\>ping 192.168.3.10
+
+Pinging 192.168.3.10 with 32 bytes of data:
+
+Reply from 192.168.3.10: bytes=32 time=2ms TTL=125
+Reply from 192.168.3.10: bytes=32 time=60ms TTL=125
+Reply from 192.168.3.10: bytes=32 time=2ms TTL=125
+Reply from 192.168.3.10: bytes=32 time=31ms TTL=125
+
+Ping statistics for 192.168.3.10:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 2ms, Maximum = 60ms, Average = 23ms
