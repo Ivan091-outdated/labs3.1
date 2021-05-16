@@ -69,6 +69,8 @@ def task():
     lambdaCrit = 1.36
     print("lambdaCrit =", lambdaCrit, lambdaWatched < lambdaCrit)
 
+    print(X - 3*S, X + 3 * S)
+
     def print_values1():
         print(f"Xв = {X}")
         print(f"Dв = {D}")

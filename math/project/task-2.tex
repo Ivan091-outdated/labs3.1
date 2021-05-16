@@ -1,20 +1,27 @@
 \paragraph{Задание 2}
 
+Доверительный интервал для мат ожидания:
 \begin{gather*}
     \bar{x_{s}} - t\frac{s}{\sqrt{n}} < \bar{x_{tr}} < \bar{x_{s}} + t\frac{s}{\sqrt{n}}\\
     t_{0.025;159} = 1.975\\
-    \bar{x_{s}} \in (433.1038; 481.6509)
+    \bar{x_{tr}} \in (433.1038; 481.6509)\\
 \end{gather*}
 
+Доверительный интервал среднего квадратического отклонения генеральной совокупности:
 \begin{gather*}
-    s \cdot q_{1} < \delta_{tr} < s \cdot q_{2}\\
+    s \cdot q_{1} < \sigma_{tr} < s \cdot q_{2}\\
     q_{1} = \sqrt{\frac{n - 1}{\chi_{0.025;159}}}\\
     q_{2} = \sqrt{\frac{n - 1}{\chi_{0.975;159}}}\\
-    \delta_{tr} \in (142.0230; 170.7810)
+    \sigma_{tr} \in (142.0230; 170.7810)
 \end{gather*}
 
+
+\[(\alpha - 3\sigma; \alpha + 3\sigma) \approx (\bar{x_s} - 3s; \bar{x_s} + 3s) \approx (-9.0108; 923.7656)\]
+Выборочные данные удовлетворяют правилу $3\sigma$ нормального распределения.
+
+
 \begin{gather*}
-    p_{i} = P(x_{i-1} < X < x{i}) = \Phi(\frac{x_{i} - \bar{x}}{\delta}) - \Phi(\frac{x_{i - 1} - \bar{x}}{\delta})
+    p_{i} = P(x_{i-1} < X < x{i}) = \Phi(\frac{x_{i} - \bar{x}}{\sigma}) - \Phi(\frac{x_{i - 1} - \bar{x}}{\sigma})
 \end{gather*}
 
 \begin{table}[H]
@@ -100,8 +107,6 @@
 \end{table}
 
 $\chi^2_{watch} = \sum_{}^{} (n{}'_{i} - n_{i}) / n{}'_{i} = 6.8199$ Для уровня значимости $\alpha = 0.05$ и $k = 10$ соответствует значение $\chi^2_{crit} = 18.3070$.
-Так как:
-\[\chi^2_{watch} < \chi^2_{crit} \]
 
 \begin{table}[H]
     \begin{center}
@@ -154,9 +159,13 @@ $\chi^2_{watch} = \sum_{}^{} (n{}'_{i} - n_{i}) / n{}'_{i} = 6.8199$ Для ур
 \begin{gather*}
     \lambda_{watch} = \sqrt{n}\cdot\max_{x}\left| F{}'(x) - F(x) \right| = 0.3365\\
     \lambda_{crit} = 1.36\\
-    \lambda_{watch} < \lambda_{crit}
 \end{gather*}
 
+Так как:
+\begin{gather*}
+    \chi^2_{watch} < \chi^2_{crit}\\
+    \lambda_{watch} < \lambda_{crit}\\
+\end{gather*}
 Нет оснований отвергать гипотезу о нормальном распределении.
 
 \includegraphics[width=0.9\textwidth]{src/gr21}
