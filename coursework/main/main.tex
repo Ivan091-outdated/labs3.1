@@ -13,31 +13,24 @@
 \usepackage{../_styles/eskd_variables}
 \usepackage{../_styles/tableOfContent}
 
-\usepackage[
-    style=gost-numeric,
-    language=auto,
-    autolang=other,
-]{biblatex}
+\usepackage[style=gost-numeric]{biblatex}
 \usepackage{import}
 \addbibresource{bibl.bib}\nocite{*}
-
+\includeonly{mainTitlePage}
 \sloppy
+
 \begin{document}
     \begin{ESKDtitlePage}
-        \input{mainTitlePage.tex}
+        \include{mainTitlePage}
     \end{ESKDtitlePage}
     \tableofcontents
     \thispagestyle{empty}
-    \input{introduction.tex}
-    \input{Part1DevAlgo.tex}
-    \input{Part2DevProg.tex}
-    \input{Part3DevAlgoParallel.tex}
-    \input{Part4DevProgParallel.tex}
-    \input{Tests.tex}
+    \include{introduction}
+    \include{Part1DevAlgo}
+    \include{Part2DevProg}
+    \include{Part3DevAlgoParallel}
+    \include{Part4DevProgParallel}
+    \include{Tests}
     \include{Conclusion}
-    \newpage
-
     \printbibliography
-
-
 \end{document}

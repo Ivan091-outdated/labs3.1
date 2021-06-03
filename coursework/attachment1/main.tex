@@ -12,11 +12,8 @@
 
 \sloppy
 \begin{document}
-
     \ESKDstyle{empty}
-    \newpage
-    \input{titlePage.tex}
-    \newpage
+    \include{titlePage}
     \setlength{\headheight}{20pt}
     \pagestyle{fancy}
     \fancyhf{}
@@ -26,5 +23,4 @@
     \lstinputlisting{../src/main.cpp}
     \lstinputlisting{../src/functions.h}
     \lstinputlisting{../src/functions.cpp}
-
 \end{document}
