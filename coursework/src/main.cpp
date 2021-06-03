@@ -4,8 +4,8 @@
 #include "bitmap_image.hpp"
 #include "functions.h"
 
-#define THREAD_COUNT 4
-#define IMAGE_PIECE_SIZE 750
+#define THREAD_COUNT 24
+#define IMAGE_PIECE_SIZE 125
 
 
 void nonParallel() {
@@ -20,7 +20,7 @@ void parallel() {
     }
 #pragma omp parallel for default(none)
     for (int i = 0; i < THREAD_COUNT; ++i) {
-        deNoise(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
+        upgrade(i * IMAGE_PIECE_SIZE, (i + 1) * IMAGE_PIECE_SIZE);
     }
 }
 
@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
     }
     loadPixels(image, 0, IMAGE_SIZE);
     double start = omp_get_wtime();
-
     if (argc > 1){
         cout << "parallel\n";
         parallel();
@@ -43,7 +42,6 @@ int main(int argc, char *argv[]) {
         cout << "nonParallel\n";
         nonParallel();
     }
-
     double end = omp_get_wtime();
     cout << "time:" << (end - start) << endl;
     unloadPixels(image, 0, IMAGE_SIZE);
