@@ -16,7 +16,6 @@
 \usepackage[style=gost-numeric]{biblatex}
 \usepackage{import}
 \addbibresource{bibl.bib}\nocite{*}
-\includeonly{mainTitlePage}
 \sloppy
 
 \begin{document}
@@ -32,5 +31,5 @@
     \include{Part4DevProgParallel}
     \include{Tests}
     \include{Conclusion}
-    \printbibliography
+    \printbibliography[heading=bibintoc, title={Список литературы}]
 \end{document}
