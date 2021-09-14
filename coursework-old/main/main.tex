@@ -3,7 +3,6 @@
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[T2A]{fontenc}
 \usepackage{textcomp}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -21,17 +20,16 @@
 \addbibresource{bibl.bib}\nocite{*}
 
 \begin{document}
-\begin{ESKDtitlePage}
-    \include{mainTitlePage}
-\end{ESKDtitlePage}
-\tableofcontents
-\thispagestyle{empty}
-\include{introduction}
-\include{Part1DevAlgo}
-\include{Part2DevProg}
-\include{Part3DevAlgoParallel}
-\include{Part4DevProgParallel}
-\include{Tests}
-\include{Conclusion}
-\printbibliography[heading=bibintoc, title={Список литературы}]
+    \begin{ESKDtitlePage}
+        \include{mainTitlePage}
+    \end{ESKDtitlePage}
+    \tableofcontents
+    \thispagestyle{empty}
+    \include{introduction}
+    \include{Part1DevAlgo}
+    \include{Part2DevProg}
+    \include{Part3DevAlgoParallel}
+    \include{Part4DevProgParallel}
+    \include{Conclusion}
+    \printbibliography[heading=bibintoc, title={Список литературы}]
 \end{document}
