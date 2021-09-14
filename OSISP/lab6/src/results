@@ -1,7 +1,0 @@
-Parent: sending signal to Child
-Parent: waiting for response
-Child : Received a signal from parent
-Child: sending signal to Parent
-Parent : Received a response signal from child
-Parent: perimeter is: 450.000000
-Process finished with exit code 0

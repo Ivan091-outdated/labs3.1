@@ -1,3 +1,0 @@
-Enter a line: Hello, my dear daddy.
-Enter a letter to replace: d
-Result: Hello, my $ear $addy.

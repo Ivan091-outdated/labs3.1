@@ -1,4 +1,0 @@
-Student name: name age: 20 grade: 5.6
-Student name: name age: 19 grade: 7.8
-Student name: name age: 18 grade: 9
-Student name: name age: 31 grade: 5.1
