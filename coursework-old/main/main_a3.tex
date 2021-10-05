@@ -1,9 +1,10 @@
-\documentclass[a3paper, nocolumnxxvi]{eskdgraph}
+\documentclass[a3paper, draft, simple, portrait, nocolumnxxvi]{eskdgraph}
 
 \usepackage[T1, T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage{textcomp}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
@@ -11,15 +12,24 @@
 \usepackage{csquotes}
 \usepackage{anyfontsize}
 \usepackage{import}
-\usepackage{picture}
-
+\usepackage{geometry}
 \usepackage{../_styles/title_variables}
 \usepackage{../_styles/eskd_variables}
 \usepackage{../_styles/tableOfContent}
 
+\geometry{paper=a3paper, portrait, tmargin=10mm, bmargin=65mm}
+
 \begin{document}
-\begin{picture}(0,0)
-    \put(0,-350){\includegraphics[scale=0.3]{../resources/uml.pdf}}
-    \put(350,-350){\includegraphics[scale=0.3]{../resources/uml.pdf}}
-\end{picture}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../resources/uml.pdf}
+\end{figure}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../resources/uml.pdf}
+\end{figure}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../resources/uml.pdf}
+\end{figure}
 \end{document}
