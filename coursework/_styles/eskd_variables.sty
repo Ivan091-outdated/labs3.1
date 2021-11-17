@@ -1,0 +1,21 @@
+\newcommand{\No}{\textnumero} % Символ номера
+
+
+\ESKDsignature{\mainSignature}
+
+% Графа 1 (наименование изделия/документа)
+\ESKDcolumnI{\titlePageTopic}
+
+% Графа 4 (литералы)
+\ESKDcolumnIVfII{\titlePageTypeWorkLetter}
+
+% Графа 9 (наименование или различительный индекс предприятия) задает команда
+\ESKDcolumnIX{\titlePageEdu}
+
+% Графа 11 (фамилии лиц, подписывающих документ) задают команды
+% Разработ.
+\ESKDcolumnXIfI{\titlePageStudentSurname}
+% Пров.
+\ESKDcolumnXIfII{\titlePageTeacherSurname}
+% Н. контр.
+\ESKDcolumnXIfV{\titlePageTeacherSurname}

@@ -1,0 +1,38 @@
+\documentclass[14pt, a4paper, simple]{eskdtext}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+% \usepackage[english]{babel}
+% \usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{csquotes}
+\usepackage{anyfontsize}
+
+\usepackage{../_styles/title_variables}
+\usepackage{../_styles/eskd_variables}
+\usepackage{../_styles/tableOfContent}
+
+\usepackage[style=gost-numeric]{biblatex}
+\usepackage{import}
+
+\sloppy
+\addbibresource{bibl.bib}\nocite{*}
+\includeonly{mainTitlePage, introduction, part1SystemAnalysis, part2Architecture}
+
+\begin{document}
+\begin{ESKDtitlePage}
+    \include{mainTitlePage}
+\end{ESKDtitlePage}
+\tableofcontents
+\thispagestyle{empty}
+\include{introduction}
+\include{part1SystemAnalysis}
+\include{part2Architecture}
+\include{part3}
+\include{part4}
+\include{conclusion}
+\printbibliography[heading=bibintoc, title={Список литературы}]
+\end{document}
