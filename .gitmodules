@@ -1,3 +1,6 @@
 [submodule "src/ssp_po5"]
 	path = src/ssp_po5
 	url = https://github.com/Ivan091/ssp_po5
+[submodule "src/QT"]
+	path = src/QT
+	url = https://github.com/Ivan091/QT
