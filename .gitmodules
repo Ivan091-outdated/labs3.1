@@ -4,3 +4,6 @@
 [submodule "src/QT"]
 	path = src/QT
 	url = https://github.com/Ivan091/QT
+[submodule "src/Titles-and-directors"]
+	path = src/Titles-and-directors
+	url = https://github.com/Ivan091/Titles-and-directors
