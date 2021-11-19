@@ -1,0 +1,42 @@
+\newcommand{\basefile}{../../src/ssp_po5/reports/Karnasevich/4/src/main4/}
+
+\paragraph{Цель работы}
+приобрести практические навыки в области ООП
+
+\paragraph{Задание 1}
+Создать класс Account (счет) с внутренним классом, с помощью объектов которого можно
+хранить информацию обо всех операциях со счетом (снятие, платежи, поступления).
+
+
+\lstinputlisting[language=Java]{\basefile task1/App1.java}
+\lstinputlisting[language=Java]{\basefile task1/Account.java}
+
+
+\paragraph{Задание 2}
+Реализовать агрегирование.
+При создании класса агрегируемый класс объявляется как атрибут (локальная переменная, параметр метода).
+Включить в каждый класс 2-3 метода на выбор.
+Продемонстрировать использование разработанных классов.
+
+Создать класс Страница, используя класс Абзац.
+
+\lstinputlisting[language=Java]{\basefile task2/App2.java}
+\lstinputlisting[language=Java]{\basefile task2/Page.java}
+\lstinputlisting[language=Java]{\basefile task2/Paragraph.java}
+
+\paragraph{Задание 3}
+Построить модель программной системы с применением отношений (обобщения, агрегации, ассоциации, реализации)
+между классами. Задать атрибуты и методы классов. Реализовать (если необходимо) дополнительные классы.
+Продемонстрировать работу разработанной системы.
+
+Система Больница. Пациенту назначается лечащий Врач. Врач может сделать назначение
+Пациенту (процедуры, лекарства, операции). Медсестра или другой Врач выполняют на-
+значение. Пациент может быть выписан из Больницы по окончании лечения, при нарушении
+режима или иных обстоятельствах.
+
+\lstinputlisting[language=Java]{\basefile task3/Main.java}
+\lstinputlisting[language=Java]{\basefile task3/Clinic.java}
+\lstinputlisting[language=Java]{\basefile task3/Doctor.java}
+\lstinputlisting[language=Java]{\basefile task3/Medic.java}
+\lstinputlisting[language=Java]{\basefile task3/Patient.java}
+

@@ -6,7 +6,7 @@
 \definecolor{my_string}{HTML}{653A09}
 
 \DeclareRobustCommand{\getFileName}{
-    \filename@parse{\lstname}
+    \protect\filename@parse{\lstname}
     \if \filename@ext\empty
     \texttt{\filename@base}
     \else
@@ -30,7 +30,7 @@
     numbers=left, % где нумерация строк
     frame=lines, % рамка
     captionpos=t,
-    title=\getFileName,
+    title={\getFileName},
     showspaces=false, % показывать пробелы
     showstringspaces=false, % показывать пробелы в строках
     keywordstyle=\bfseries\color{my_keyword}\bfseries,
