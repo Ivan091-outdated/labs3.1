@@ -1,45 +1,25 @@
-\newcommand{\basefile}{../../src/ssp_po5/reports/Karnasevich/6/src/main6/}
+\paragraph{Задание}
 
-\paragraph{Цель работы}
-приобрести навыки применения паттернов проектирования при решении практических задач с
-использованием языка Java
+Спроектировать базу данных и создать приложение для автоматизации работы фирмы по производству обуви.
+База данных должна хранить данные о каждом сотруднике, список поставщиков необходимой продукции или комплектующих и данные о каждом поставщике, список поставляемой продукции или комплектующих, список выполняемых сотрудниками работ.
+Каждый поставщик может поставлять несколько видов продукции.
+Каждый сотрудник может выполнять несколько видов работ, каждый вид работ может выполняться несколькими сотрудниками.
 
+\includegraphics[width=0.9\textwidth]{social-network.pdf}
 
-\paragraph{Задание 1}
-Проект «Бургер-закусочная». Реализовать возможность формирования заказа из определенных
-позиций (тип бургера (веганский, куриный и т.д.)), напиток (холодный – пепси, кока-кола
-и т.д.; горячий – кофе, чай и т.д.), тип упаковки – с собой, на месте. Должна формироваться
-итоговая стоимость заказа.
-
-\lstinputlisting[language = Java]{\basefile task1/Main.java}
-\lstinputlisting[language = Java]{\basefile task1/Position.java}
-\lstinputlisting[language = Java]{\basefile task1/Restaurant.java}
-\lstinputlisting[language = Java]{\basefile task1/burger/Burger.java}
-\lstinputlisting[language = Java]{\basefile task1/drink/Drink.java}
-\lstinputlisting[language = Java]{\basefile task1/pack/Package.java}
-
-\paragraph{Задание 2 и 3}
-Проект «IT-компания». В проекте должен быть реализован класс «Сотрудник» c субординацией
-(т.е. должна быть возможность определения кому подчиняется сотрудник и кто находится в
-его подчинении). Для каждого сотрудника помимо сведений о субординации хранятся другие
-данные (ФИО, отдел, должность, зарплата). Предусмотреть возможность удаления и добавления
-сотрудника.
-
-Проект «Расчет зарплаты». Для задания, указанного во втором пункте («IT-компания») реализовать
-расчет зарплаты с выводом полного отчета. Порядок вывода сотрудников в отчете ---
-по старшинству для каждого отдела.
-
-\lstinputlisting[language = Java]{\basefile task2/Main.java}
-\lstinputlisting[language = Java]{\basefile task2/Company.java}
-\lstinputlisting[language = Java]{\basefile task2/Employee.java}
-
-Пример вывода:
-
-\begin{lstlisting}
-Employee{name='Gray', department=SALES, salary=800}
-Employee{name='Soap', department=SALES, salary=700}
-Employee{name='Le', department=SALES, salary=900}
-Employee{name='Ivan', department=IT, salary=1000}
-Employee{name='Liza', department=IT, salary=1200}
-Employee{name='Tuan', department=IT, salary=900}
-\end{lstlisting}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Актёр                      & Цель                                  & Успех                  & Исключение       \\ \hline
+        Сотрудник                  & Выполнить работу                      & Успех                  &                  \\ \hline
+        Архитектор                 & Спроектировать проект                 & Успех                  &                  \\ \hline
+        \multirow{3}{*}{Менеджер}  & \multirow{2}{*}{Согласовать поставки} & \multirow{2}{*}{Успех} & Проект не создан \\ \cline{4-4}
+                                   &                                       &                        & Нет поставщиков  \\ \cline{2-4}
+                                   & Заключить контракт с поставщиком      & Успех                  &                  \\ \hline
+        \multirow{3}{*}{Поставщик} & Поставить материалы                   & Успех                  & Нет материалов   \\ \cline{2-4}
+                                   & Договориться о поставках              & Успех                  & Нет материалов   \\ \cline{2-4}
+                                   & Заключить контракт                    & Успех                  &                  \\ \hline
+    \end{tabular}
+\end{table}
